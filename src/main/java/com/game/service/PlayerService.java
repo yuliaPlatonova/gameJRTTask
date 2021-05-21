@@ -11,7 +11,7 @@ import java.util.List;
 public interface PlayerService {
     List<Player> getAllPlayers(Specification<Player> specification);
 
-    Page<Player> getAllPlayers(Specification<Player> specification, Pageable sortedByName);
+    Page<Player> getAllPlayers(Specification<Player> specification, Pageable sortedPageable);
 
     Player createPlayer(Player requestPlayer);
 
