@@ -116,7 +116,7 @@ public class Player {
         this.birthday = birthday;
     }
 
-    public Boolean getBanned() {
+    public Boolean isBanned() {
         return banned;
     }
 

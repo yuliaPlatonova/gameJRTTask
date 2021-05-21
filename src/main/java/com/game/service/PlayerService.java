@@ -21,4 +21,5 @@ public interface PlayerService {
 
     void deletePlayerById(Long id);
 
+    Long getIdFromString(String stringId);
 }

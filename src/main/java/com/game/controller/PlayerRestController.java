@@ -18,12 +18,14 @@ public class PlayerRestController {
         this.service = playerService;
     }
 
+//need to do
     @GetMapping("/players")
     @ResponseStatus(HttpStatus.OK)
     public List<Player> getAllPlayersList() {
         return null;
     }
 
+    //need to do
     @GetMapping("/players/count")
     @ResponseStatus(HttpStatus.OK)
     public Integer getPlayersCount(){
@@ -40,21 +42,24 @@ public class PlayerRestController {
     @GetMapping("/players/{id}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Player getPlayerById(@PathVariable(value = "id") Long id){
-        return service.getPlayerById(id);
+    public Player getPlayerById(@PathVariable(value = "id") String id){
+        Long longId = service.getIdFromString(id);
+        return service.getPlayerById(longId);
     }
 
     @PostMapping("/players/{id}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public Player updatePlayer(@PathVariable(value = "id") Long id, @RequestBody Player player){
-        return service.updatePlayerById(id, player);
+    public Player updatePlayer(@PathVariable(value = "id") String id, @RequestBody Player player){
+        Long longId = service.getIdFromString(id);
+        return service.updatePlayerById(longId, player);
     }
 
     @DeleteMapping("/players/{id}")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public void deletePlayerById(@PathVariable(value = "id") Long id){
-        service.deletePlayerById(id);
+    public void deletePlayerById(@PathVariable(value = "id") String id){
+        Long longId = service.getIdFromString(id);
+        service.deletePlayerById(longId);
     }
 }
