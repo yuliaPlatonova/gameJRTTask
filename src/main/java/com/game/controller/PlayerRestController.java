@@ -24,7 +24,6 @@ public class PlayerRestController {
         this.service = playerService;
     }
 
-    //need to do
     @GetMapping("/players")
     @ResponseStatus(HttpStatus.OK)
     public List<Player> getAllPlayersList(@RequestParam(value = "name", required = false) String name,
@@ -54,7 +53,6 @@ public class PlayerRestController {
                 .and(service.filterByLevel(minLevel, maxLevel)), pageable).getContent();
     }
 
-    //need to do
     @GetMapping("/players/count")
     @ResponseStatus(HttpStatus.OK)
     public Integer getPlayersCount(@RequestParam(value = "name", required = false) String name,

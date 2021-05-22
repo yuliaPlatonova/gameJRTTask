@@ -35,7 +35,6 @@ public class PlayerServiceImpl implements PlayerService {
         return repository.findAll(specification, sortedPageable);
     }
 
-    //need to redo
     @Override
     public Player createPlayer(Player requestPlayer) {
         if (requestPlayer.getName() == null || requestPlayer.getTitle() == null ||
