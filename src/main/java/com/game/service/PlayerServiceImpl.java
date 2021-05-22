@@ -152,7 +152,7 @@ public class PlayerServiceImpl implements PlayerService {
         if (title == null) {
             return null;
         }
-        return (root, query, cb) -> cb.like(root.get("name"), "%" + title + "%");
+        return (root, query, cb) -> cb.like(root.get("title"), "%" + title + "%");
     }
 
     @Override
